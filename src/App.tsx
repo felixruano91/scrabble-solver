@@ -57,7 +57,7 @@ function App() {
   const handleInputChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => setPattern(value);
 
   return (
-    <MainContainer className="App">
+    <MainContainer className="App" data-testid="main-container">
       <ScrabbleSection>
         <Header>Scrabble Solver</Header>
         <Description>Input a pattern of letters to find results from the dictionary</Description>
