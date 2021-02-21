@@ -4,7 +4,7 @@ import {
   primary,
   primaryDark,
   secondary,
-} from "../styles/colors";
+} from "../../styles/colors";
 
 interface UploadButtonProps {
   disabled: boolean;

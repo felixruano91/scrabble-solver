@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { disabled as disabledStyle, primaryDark, primaryLight } from "../styles/colors";
+import { disabled as disabledStyle, primaryDark, primaryLight } from "../../styles/colors";
 
 interface PatternInputProps {
   disabled: boolean;

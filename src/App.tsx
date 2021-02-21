@@ -1,14 +1,14 @@
 import { useState, ChangeEvent, useRef, useEffect } from 'react';
 import {
-  ScrabbleSection,
-  PatternInput,
   Description,
   Header,
-  UploadButton,
   MainContainer,
+  PatternInput,
   ResultsList,
+  ScrabbleSection,
+  UploadButton,
 } from "./components"
-import { isAnagram, getScrabbleScore } from "./utils";
+import { isAnagram, getScrabbleScore, DEBOUNCE_MS } from "./utils";
 
 function App() {
   const fileInput = useRef<HTMLInputElement>(null);
@@ -31,7 +31,7 @@ function App() {
       }, []).sort(([scoreA], [scoreB]) => parseInt(scoreB, 10) - parseInt(scoreA, 10));
 
       setResults(anagramsSortedByScrabbleScore)
-    }, 1000);
+    }, DEBOUNCE_MS);
 
     return () => clearTimeout(timoutId);
   }, [pattern, dictionary])

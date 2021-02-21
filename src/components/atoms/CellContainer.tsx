@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { primaryLight } from "../styles/colors";
+import { primaryLight } from "../../styles/colors";
 
 export const CellContainer = styled.div`
   display: flex;

@@ -1,3 +1,5 @@
+export const DEBOUNCE_MS = 1000;
+
 const POINTS: Record<string, number> = {
   a: 1,
   e: 1,

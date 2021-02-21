@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { primaryDark } from "../styles/colors";
+import { primaryDark } from "../../styles/colors";
 
 export const MainContainer = styled.main`
   display: flex;
