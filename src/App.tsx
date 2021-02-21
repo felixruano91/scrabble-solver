@@ -83,7 +83,7 @@ function App() {
             url
           </Hyperlink>, select everything with <i>cmd + a</i> followed by <i>cmd + c</i> to copy everything<br />
           2️⃣ Create a file called <i>words.txt</i> and paste everything there, then save it<br />
-          3️⃣ Press the button and select the file!
+          3️⃣ Click the button and select the file!
         </Description>
         <UploadButton disabled={!isDisabled} onClick={handleClickAddFile}>
           upload <i>words.txt</i> dictionary
