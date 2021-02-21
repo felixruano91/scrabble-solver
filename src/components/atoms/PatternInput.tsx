@@ -8,5 +8,6 @@ interface PatternInputProps {
 export const PatternInput = styled.input`
   background-color: ${({ disabled }: PatternInputProps) => disabled ? disabledStyle : primaryLight};
   color: ${primaryDark};
-  padding: 14px;
+  padding: 6px;
+  border-radius: 6px;
 `

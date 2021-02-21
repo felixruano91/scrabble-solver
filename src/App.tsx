@@ -7,6 +7,7 @@ import {
   ResultsList,
   ScrabbleSection,
   UploadButton,
+  Hyperlink,
 } from "./components"
 import { isAnagram, getScrabbleScore, DEBOUNCE_MS } from "./utils";
 
@@ -57,17 +58,9 @@ function App() {
 
   return (
     <MainContainer className="App">
-      <UploadButton disabled={!isDisabled} onClick={handleClickAddFile}>Upload words.txt</UploadButton>
-      <input
-        ref={fileInput}
-        type="file"
-        accept=".txt"
-        style={{ display: "none" }}
-        onChange={handleFileInputChange}
-      />
       <ScrabbleSection>
         <Header>Scrabble Solver</Header>
-        <Description>Type a pattern of letters to find results from the dictionary</Description>
+        <Description>Input a pattern of letters to find results from the dictionary</Description>
         <PatternInput
           placeholder="pattern"
           disabled={isDisabled}
@@ -78,6 +71,28 @@ function App() {
           <ResultsList results={results} />
         )}
       </ScrabbleSection>
+      <UploadButton disabled={!isDisabled} onClick={handleClickAddFile}>
+        upload <i>words.txt</i> dictionary
+      </UploadButton>
+      <input
+        ref={fileInput}
+        type="file"
+        accept=".txt"
+        style={{ display: "none" }}
+        onChange={handleFileInputChange}
+      />
+      <Description>
+        1️⃣ Go to this{" "}
+        <Hyperlink
+          target="_blank"
+          rel="noreferrer"
+          href="http://recruiting.bluenile.com/words.txt"
+        >
+          url
+        </Hyperlink>, select everything with <i>cmd + a</i> followed by <i>cmd + c</i> to copy everything<br />
+        2️⃣ Create a file called <i>words.txt</i> and paste everything there, then save it<br />
+        3️⃣ Press the button and select the file!
+      </Description>
     </MainContainer>
   );
 }

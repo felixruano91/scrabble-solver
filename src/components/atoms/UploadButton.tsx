@@ -15,6 +15,7 @@ export const UploadButton = styled.button`
   color: ${primaryDark};
   padding: 14px;
   border-radius: 6px;
+  font-weight: bold;
   &:hover {
     border-right: ${({ disabled }: UploadButtonProps) => !disabled && `4px solid ${secondary}`};
     border-bottom: ${({ disabled }: UploadButtonProps) => !disabled && `4px solid ${secondary}`};
