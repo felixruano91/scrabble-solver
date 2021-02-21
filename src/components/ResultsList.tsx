@@ -20,20 +20,18 @@ export const ResultsList = ({ results }: ResultsListProps) => {
           <h2>Result</h2>
         </CellContainer>
       </FlexContainer>
-      {results.length > 0 && (
-        <ListContainer>
-          {results.map(([score, word], index) => (
-            <FlexContainer key={index}>
-              <CellContainer>
-                {score}
-              </CellContainer>
-              <CellContainer>
-                {word}
-              </CellContainer>
-            </FlexContainer>
-          ))}
-        </ListContainer>
-      )}
+      <ListContainer>
+        {results.map(([score, word], index) => (
+          <FlexContainer key={index}>
+            <CellContainer>
+              {score}
+            </CellContainer>
+            <CellContainer>
+              {word}
+            </CellContainer>
+          </FlexContainer>
+        ))}
+      </ListContainer>
     </ResultsContainer>
   )
 }
