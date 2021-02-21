@@ -4,5 +4,5 @@ export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow: auto;
-  max-height: 200px;
+  max-height: 300px;
 `;

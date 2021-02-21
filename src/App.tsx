@@ -5,7 +5,7 @@ import {
   MainContainer,
   PatternInput,
   ResultsList,
-  ScrabbleSection,
+  Section,
   UploadButton,
   Hyperlink,
 } from "./components"
@@ -58,7 +58,7 @@ function App() {
 
   return (
     <MainContainer className="App" data-testid="main-container">
-      <ScrabbleSection>
+      <Section>
         <Header>Scrabble Solver</Header>
         <Description>Input a pattern of letters to find results from the dictionary</Description>
         <PatternInput
@@ -70,29 +70,32 @@ function App() {
         {results.length > 0 && (
           <ResultsList results={results} />
         )}
-      </ScrabbleSection>
-      <UploadButton disabled={!isDisabled} onClick={handleClickAddFile}>
-        upload <i>words.txt</i> dictionary
-      </UploadButton>
-      <input
-        ref={fileInput}
-        type="file"
-        accept=".txt"
-        style={{ display: "none" }}
-        onChange={handleFileInputChange}
-      />
-      <Description>
-        1️⃣ Go to this{" "}
-        <Hyperlink
-          target="_blank"
-          rel="noreferrer"
-          href="http://recruiting.bluenile.com/words.txt"
-        >
-          url
-        </Hyperlink>, select everything with <i>cmd + a</i> followed by <i>cmd + c</i> to copy everything<br />
-        2️⃣ Create a file called <i>words.txt</i> and paste everything there, then save it<br />
-        3️⃣ Press the button and select the file!
-      </Description>
+      </Section>
+      <Section>
+        <Header>Instructions</Header>
+        <Description>
+          1️⃣ Go to this{" "}
+          <Hyperlink
+            target="_blank"
+            rel="noreferrer"
+            href="http://recruiting.bluenile.com/words.txt"
+          >
+            url
+          </Hyperlink>, select everything with <i>cmd + a</i> followed by <i>cmd + c</i> to copy everything<br />
+          2️⃣ Create a file called <i>words.txt</i> and paste everything there, then save it<br />
+          3️⃣ Press the button and select the file!
+        </Description>
+        <UploadButton disabled={!isDisabled} onClick={handleClickAddFile}>
+          upload <i>words.txt</i> dictionary
+        </UploadButton>
+        <input
+          ref={fileInput}
+          type="file"
+          accept=".txt"
+          style={{ display: "none" }}
+          onChange={handleFileInputChange}
+        />
+      </Section>
     </MainContainer>
   );
 }
